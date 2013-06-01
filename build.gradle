@@ -1,0 +1,35 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+ext {
+	hibernateVersion = '4.1.7.Final'
+	mysqlConnectorVersion = '5.1.21'
+	slf4jVersion = '1.6.6'
+	springVersion = '3.1.3.RELEASE'
+}
+
+repositories {
+	mavenCentral();
+}
+
+dependencies {
+	compile "org.hibernate:hibernate-core:${hibernateVersion}"
+	compile "org.hibernate:hibernate-entitymanager:${hibernateVersion}"
+	compile "mysql:mysql-connector-java:${mysqlConnectorVersion}"
+	compile "commons-dbcp:commons-dbcp:1.4"
+	compile "javassist:javassist:3.12.1.GA"
+	compile "org.springframework:spring-webmvc:${springVersion}"
+	compile "org.springframework:spring-tx:${springVersion}"
+	compile "org.springframework:spring-jdbc:${springVersion}"
+	compile "org.springframework:spring-orm:${springVersion}"
+	compile "cglib:cglib:2.2.2"
+	compile "org.springframework.security:spring-security-core:${springVersion}"
+	compile "org.springframework.security:spring-security-web:${springVersion}"
+	compile "org.springframework.security:spring-security-config:${springVersion}"
+	compile "jstl:jstl:1.2"
+	
+	providedCompile "javax.servlet:javax.servlet-api:3.0.1"
+	
+	testCompile "junit:junit:4.7"
+}
